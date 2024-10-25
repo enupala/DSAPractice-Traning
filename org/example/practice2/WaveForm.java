@@ -13,18 +13,22 @@ public class WaveForm {
         for (int i = 0; i < n - 1; i++) {
             if (i % 2 == 0) {
                 if (arr[i] < arr[i + 1]) {
-                    int temp = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = temp;
+                    swapValues(arr,i,i+1);
+
                 }
             } else {
                 if (arr[i + 1] < arr[i]) {
-                    int temp = arr[i + 1];
-                    arr[i + 1] = arr[i];
-                    arr[i] = temp;
+                    swapValues(arr,i,i+1);
+
                 }
             }
         }
         return arr;
+    }
+
+    private static void swapValues(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
