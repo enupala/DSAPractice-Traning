@@ -9,7 +9,7 @@ public class StairCase {
     }
 
     private static void solve() {
-        int n=4;
+        int n=5;
         strg=new int[n+1];
         Arrays.fill(strg,-1);
         int ways=calculateWays(n);
