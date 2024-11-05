@@ -3,7 +3,7 @@ package org.example.practice2;
 public class LongestSub {
     public static void main(String[] args) {
 
-        String str = "aabbbbCCddd";
+        String str = "aaabbbbbCCddd";
         String sub=longestSub(str);
         System.out.println(sub);
 
@@ -21,12 +21,24 @@ public class LongestSub {
             if(maxLen<len)
             {
                 maxLen=len;
-                start=i-(len-1)/2;
+                start=i-(maxLen-1)/2;
             }
 
         }
-        System.out.println(start);
 
+
+        for(int i=1;i<n-1;i++)
+        {
+            int p1=i-1;
+            int p2=i+1;
+            int len=expandAroundTech(str,p1,p2);
+                    if(maxLen<len)
+                    {
+                        maxLen=len;
+                        start=i-(maxLen-1)/2;
+                    }
+        }
+        System.out.println(start);
         return str.substring(start,start+maxLen);
 
     }
