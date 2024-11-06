@@ -30,15 +30,12 @@ public class DictCount {
             if(s.length()==input.length())
             {
                int []freEle=new int[26];
-                int j=0;
-               while(j<s.length())
+                for(int j=0;j<s.length();j++)
                 {
                     char ch=s.charAt(j);
                     int ind=ch-'a';
                     freEle[ind]++;
-                   j++;
-
-                    }
+                }
                 if(Arrays.equals(freInput,freEle)){
                     list.add(s);
 
