@@ -15,7 +15,7 @@ String str1 = ""12345""
 String str2 = ""abbacd""
     //Return c"
 */
-        String str2 = "12345";
+        String str2 = "abbacd";
         findFirstNonRepeatingChar(str2);
     }
 

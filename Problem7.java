@@ -27,6 +27,7 @@ Say the document is a string of words,
         List<String> words=Arrays.asList(arr).stream().filter(name->name.toLowerCase().startsWith(prefix)).collect(Collectors.toList());
        for(String s:words)
         System.out.print(s+" ");
+
     }
 
 

@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class DictCount {
     public static void main(String[] args) {
         String[] dict = {"ab", "abcd", "bcdaf", "bcad", "acaab", "acab"};
-        String input = "caab";
+        String input = "abcd";
        String[] arr = dictCount(dict,input);
        for(String s:arr)
            System.out.print(s+" ");
@@ -44,6 +44,6 @@ public class DictCount {
 
             }
         }
-        return list.toArray(new String[0]);
+        return list.toArray(new String[list.size()]);
     }
 }
