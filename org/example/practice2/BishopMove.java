@@ -6,7 +6,7 @@ public class BishopMove {
 
             System.out.println(canReachBishop(1, 1, 4, 4)); // "YES, 1" (same diagonal)
             System.out.println(canReachBishop(1, 1, 2, 3)); // "NO" (different color)
-            System.out.println(canReachBishop(1, 1, 2, 4)); // "YES, 1" (same diagonal)
+            System.out.println(canReachBishop(1, 1, 2, 4)); // "YES, 2" (same diagonal)
             System.out.println(canReachBishop(1, 1, 5, 5)); // "YES, 1" (same diagonal)
         }
 

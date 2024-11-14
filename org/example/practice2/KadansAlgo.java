@@ -19,13 +19,13 @@ public class KadansAlgo {
             }
             else{
                 sum=arr[i];
-                start=i;
+               /* start=i;*/
             }
             if(max<sum)
             {
                 max=sum;
-                maxStart=start;
-                maxEnd=i;
+                /*maxStart=start;
+                maxEnd=i;*/
             }
         }
         System.out.println("start index : "+maxStart);
