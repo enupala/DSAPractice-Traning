@@ -4,7 +4,8 @@ import java.util.Stack;
 
 public class BalancedParanthesis {
     public static void main(String[] args) {
-        String s="{([])}";
+        String s="({[]})";
+      // String s="(a+(b-c)+z)-z";
         boolean isBalanced=checkBalance(s);
         System.out.println(isBalanced);
 
@@ -15,7 +16,8 @@ public class BalancedParanthesis {
         for(int i=0;i<s.length();i++)
         {
            char ch=s.charAt(i);
-           if(op.size()==0)
+
+            if(ch=='{' || ch=='(' || ch=='[')
            {
                op.push(ch);
            }
@@ -31,13 +33,10 @@ public class BalancedParanthesis {
            {
                op.pop();
            }
-           else{
-               op.push(ch);
-           }
+
         }
-        if(op.size()==0)
-            return true;
-        else
-            return false;
+
+
+            return op.isEmpty();
     }
 }
