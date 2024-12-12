@@ -14,7 +14,7 @@ public class State {
         sts.add(new StateCode("Andra","Amaravathi"));
        getCities(sts);
         System.out.println();
-        getCitiesUsingStreams(sts);
+        //getCitiesUsingStreams(sts);
     }
 
     private static void getCities(ArrayList<StateCode> sts) {
