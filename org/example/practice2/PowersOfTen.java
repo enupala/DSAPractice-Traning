@@ -2,7 +2,7 @@ package org.example.practice2;
 
 public class PowersOfTen {
     public static void main(String[] args) {
-        boolean isPowerTen=isPowerTen(999);
+        boolean isPowerTen=isPowerTen(1000);
         System.out.println(isPowerTen);
     }
 
