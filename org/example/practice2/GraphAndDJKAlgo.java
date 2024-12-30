@@ -41,7 +41,7 @@ public class GraphAndDJKAlgo {
             graph.get(u).add(new Pair(v,w));
 
         }
-       // dispaly(graph);
+       dispaly(graph);
         int res[]=djiktra(graph,src);
         for(int i=0;i<res.length;i++)
         {
