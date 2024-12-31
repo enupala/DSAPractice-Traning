@@ -14,11 +14,19 @@ public class LinkedListOPerations {
 
     public static void main(String[] args) {
         Node head=null;
-        int arr[]={10,20,30,40,50};
+        Node head1=null;
+        int arr[]={10,12,30,33,50};
         for(int ele : arr)
-        head=addFirst(ele,head);
+        head=addLast(ele,head);
         printLL(head);
-      head=  addAt(head,2,25);
+
+        int arr1[]={5,15,25,31,50};
+        for(int ele : arr1)
+            head1=addLast(ele,head1);
+        printLL(head1);
+      Node newMergedHead= mergeTwoLL(head,head1);
+        printLL(newMergedHead);
+      /*head=  addAt(head,2,25);
         printLL(head);
         head=  addAt(head,6,100);
         printLL(head);
@@ -28,11 +36,11 @@ public class LinkedListOPerations {
         printLL(head);
         head=deleteNode(head,0);
         printLL(head);
-       /* head=deleteNode(head,5);
-        printLL(head);*/
+       *//* head=deleteNode(head,5);
+        printLL(head);*//*
         head=reverseLL(head);
         printLL(head);
-        midOfLL(head);
+        midOfLL(head);*/
 
 
 
@@ -43,6 +51,21 @@ public class LinkedListOPerations {
         nn.next=head;
         head=nn;
         return head;
+    }
+    static Node addLast(int ele, Node head)
+    {
+        Node nn=new Node(ele);
+        if(head==null)
+            return nn;
+        Node temp=head;
+        while(temp.next!=null)
+        {
+            temp=temp.next;
+
+        }
+        temp.next=nn;
+        return head;
+
     }
     static void printLL(Node head)
     {
@@ -113,6 +136,36 @@ public class LinkedListOPerations {
             fast=fast.next.next;
         }
         System.out.println(slow.val);
+    }
+    static Node mergeTwoLL(Node head1,Node head2)
+    {
+        Node dummy=new Node(-1);
+        Node temp=dummy;
+        Node t1=head1;
+        Node t2=head2;
+        while(t1!=null && t2!=null)
+        {
+            if(t1.val< t2.val)
+            {
+                temp.next=t1;
+                temp=t1;
+                t1=t1.next;
+            }
+            else{
+                temp.next=t2;
+                temp=t2;
+                t2=t2.next;
+
+            }
+        }
+        if(t1!=null)
+        {
+            temp.next=t1;
+        }
+        if(t2!=null)
+            temp.next=t2;
+
+        return  dummy.next;
     }
 
 }
