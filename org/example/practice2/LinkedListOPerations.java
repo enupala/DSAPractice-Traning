@@ -28,10 +28,13 @@ public class LinkedListOPerations {
         printLL(head);
         head=deleteNode(head,0);
         printLL(head);
-        head=deleteNode(head,5);
-        printLL(head);
+       /* head=deleteNode(head,5);
+        printLL(head);*/
         head=reverseLL(head);
         printLL(head);
+        midOfLL(head);
+
+
 
     }
 
@@ -100,6 +103,16 @@ public class LinkedListOPerations {
             curr=next;
         }
         return  prev;
+    }
+    static void midOfLL(Node head)
+    {
+        Node slow=head,fast=head;
+        while(fast.next!=null && fast.next.next!=null)
+        {
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        System.out.println(slow.val);
     }
 
 }
