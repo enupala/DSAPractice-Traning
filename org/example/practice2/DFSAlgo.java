@@ -23,7 +23,7 @@ public class DFSAlgo {
             graph.get(v).add(u);
             graph.get(u).add(v);
         }
-        //display(graph);
+        display(graph);
         boolean visited[]=new boolean[vertx];
         Arrays.fill(visited,false);
 
