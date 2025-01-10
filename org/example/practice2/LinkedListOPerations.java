@@ -12,6 +12,7 @@ public class LinkedListOPerations {
         }
     }
 
+
     public static void main(String[] args) {
         Node head=null;
         Node head1=null;
@@ -19,6 +20,9 @@ public class LinkedListOPerations {
         for(int ele : arr)
         head=addLast(ele,head);
         printLL(head);
+        System.out.println("LL");
+        Node revHead=reverseLL(head);
+        printLL(revHead);
 
         int arr1[]={5,15,25,31,50};
         for(int ele : arr1)

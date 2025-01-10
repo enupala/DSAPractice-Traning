@@ -1,5 +1,8 @@
 package org.example.practice2;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class ConstructBTWithPI {
     static class Node{
         int val;
@@ -14,8 +17,40 @@ public class ConstructBTWithPI {
     public static void main(String[] args) {
         int pre[]={10,20,40,50,60,30,70,90,80};
         int in[]={40,20,60,50,10,70,90,30,80};
+        Node root=buildBT(pre,in);
+        display(root);
+        printLevelOderWise(root);
+    }
+
+    private static void printLevelOderWise(Node root) {
+        Queue<Node>q=new ArrayDeque<>();
+        q.add(root);
+        while(q.size()>0)
+        {
+            int sz=q.size();
+            for(int i=0;i<sz;i++)
+            {
+                //remove
+                Node rem=q.remove();
+                //print
+                System.out.print(rem.val+" ");
+                //add children
+                if(rem.left!=null)
+                {
+                    q.add(rem.left);
+                }
+                if(rem.right!=null)
+                {
+                    q.add(rem.right);
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    private static Node buildBT(int[] pre, int[] in) {
         Node node=makeBt(pre,0,pre.length-1,in,0,in.length-1);
-        display(node);
+        return node;
     }
 
     private static void display(Node node) {
