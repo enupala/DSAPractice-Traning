@@ -16,12 +16,32 @@ public class LetterToWord {
         map.put('9',"wxyz");
         map.put('1',"1");
         map.put('0',"0");
-        String digits="23";
+        String digits="123";
 
-       List<String>list= stringCombinations(digits);
+       List<String>list= stringCombinations1(digits);
        for(int i=0;i<list.size();i++)
            System.out.print(list.get(i)+" ");
 
+    }
+    private static List<String> stringCombinations1(String digits) {
+       ArrayList<String>list=new ArrayList<>();
+       Queue<String>q=new ArrayDeque<>();
+       q.add("");
+       for(char c:digits.toCharArray())
+       {
+           String ltrs=map.get(c);
+           int size=q.size();
+           for(int i=0;i<size;i++)
+           {
+               String rem=q.poll();
+               for(char ch : ltrs.toCharArray())
+               {
+                   q.add(rem+ch);
+               }
+           }
+       }
+       list.addAll(q);
+       return list;
     }
 
     private static List<String> stringCombinations(String digits) {

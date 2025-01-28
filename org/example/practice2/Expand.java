@@ -3,7 +3,7 @@ package org.example.practice2;
 public class Expand {
     public static void main(String[] args) {
 
-        String s = "forgeeksskeegfor";
+        String s = "forgeeksskeegfor"; //madam
         String sub = lengthOfLongestPal(s);
         System.out.print(sub);
 

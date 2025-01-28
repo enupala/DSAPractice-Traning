@@ -29,8 +29,8 @@ public class BFSAlgo {
         {
             int v=edg[0];
             int u=edg[1];
-            graph.get(v).add(u);
-            graph.get(u).add(v);
+            graph.get(v).add(u);// 0 -> 1// 0 - 1
+            graph.get(u).add(v);// 0 <-1
         }
         display(graph);
         bfsAlgo(graph,src);

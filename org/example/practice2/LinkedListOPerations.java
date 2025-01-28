@@ -61,9 +61,11 @@ public class LinkedListOPerations {
         Node nn=new Node(ele);
         if(head==null)
             return nn;
+
         Node temp=head;
         while(temp.next!=null)
         {
+            //8 1 4  5 6 7
             temp=temp.next;
 
         }
