@@ -1,4 +1,4 @@
-package org.example.practice2.designpatterns.factorydp;
+package designpatterns.factorydp;
 
 public class IOS implements OS{
     @Override

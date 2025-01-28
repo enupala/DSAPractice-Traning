@@ -1,4 +1,4 @@
-package org.example.practice2.designpatterns.factorydp.shape;
+package designpatterns.factorydp.shape;
 
 public class Rectangle implements Shape{
     @Override

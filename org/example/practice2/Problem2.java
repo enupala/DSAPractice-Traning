@@ -25,6 +25,7 @@ String toSearch = ""ODG"";
             if(s.contains(toSearch))
               max=Math.max(max,s.length());
         }
+
         System.out.println(max);
     }
 }

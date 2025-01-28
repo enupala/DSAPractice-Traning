@@ -1,6 +1,7 @@
 package catchITProblems;
 
 import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Problem1 {
     public static void main(String[] args) {
@@ -10,6 +11,7 @@ public class Problem1 {
         System.out.println(res);
        // System.out.println(result);
     }
+
 
     private static int optimised(int[] arr) {
         int smallest=Integer.MAX_VALUE;
