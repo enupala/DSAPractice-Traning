@@ -16,19 +16,14 @@ public class NonDiagnalSwap {
             throw new IllegalArgumentException("matrix must be square");
         for(int i=0;i<rows;i++)
         {
-            for(int j=0;j<cols;j++)
-            {
-                if(i==j || i+j==rows-1 )
-                {continue;}
+            for(int j=0;j<cols;j++) {
+                if (i!= j || i != rows - j - 1) {
 
+                    int temp = matrix[i][j];
+                    matrix[i][j] = matrix[j][i];
+                    matrix[j][i] = temp;
 
-                    int temp=matrix[i][j];
-                    matrix[i][j]=matrix[rows-i-1][cols-j-1];
-                    matrix[rows-i-1][cols-j-1]=temp;
-
-
-                /*else if (i==j)
-                    continue;*/
+                }
             }
         }
         for(int i=0;i<rows;i++)

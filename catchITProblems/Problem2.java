@@ -8,8 +8,8 @@ import java.util.function.Predicate;
 public class Problem2 {
     public static void main(String[] args) {
         String s="swiss";
-        //char ch=findFirstNonRepeatingChar(s);
-        char ch=findingNonRepeatingChar(s);
+        char ch=findFirstNonRepeatingChar(s);
+        //char ch=findingNonRepeatingChar(s);
         System.out.println(ch);
     }
 
@@ -18,13 +18,14 @@ public class Problem2 {
         for(int i=0;i<s.length();i++)
         {
             char ch=s.charAt(i);
-            if(map.containsKey(ch))
+           /* if(map.containsKey(ch))
             {
                 map.put(ch,map.get(ch)+1);
             }
             else {
                 map.put(ch,1);
-            }
+            }*/
+            map.put(ch,map.getOrDefault(ch,0)+1);
         }
         char ch='0';
         for(char c:s.toCharArray())

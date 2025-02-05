@@ -34,6 +34,7 @@ public class LongestSubstringDistinctEle {
             }
             max=Math.max(max,set.size());
         }
+        System.out.println(s.substring(start,end));
         return max;
     }
     private static String test(String s)
