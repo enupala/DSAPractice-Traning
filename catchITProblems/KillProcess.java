@@ -6,6 +6,8 @@ public class KillProcess {
     public static void main(String[] args) {
         List<Integer> pid = Arrays.asList(1, 2, 3, 0);
         List<Integer> ppid = Arrays.asList(6, 4, 8, 5);
+//        List<Integer>  ppid=Arrays.asList(1,2,3,4,5);
+//          List<Integer> pid=Arrays.asList(3,7,3,2,1) ;
         int kill = 3;
         System.out.println(killProcess2(pid, ppid, kill));
     }
@@ -22,12 +24,13 @@ public class KillProcess {
         Queue<Integer>q=new ArrayDeque<>();
         ArrayList<Integer>list=new ArrayList<>();
         q.offer(kill);
-        while(q.size()>0)
+        int size=q.size();
+        for(int i=0;i<size;i++)
         {
             int rem=q.poll();
             list.add(rem);
             if(map.containsKey(rem))
-                list.addAll(map.get(rem));
+                q.addAll(map.get(rem));
         }
         int parentIndex=pid.indexOf(kill);
         if(parentIndex!=-1)
