@@ -4,15 +4,23 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Problem2 {
     public static void main(String[] args) {
         String s="swiss";
-        char ch=findFirstNonRepeatingChar(s);
+        char ch=finFirstNonRepatingCharUsingStreams(s);
         //char ch=findingNonRepeatingChar(s);
         System.out.println(ch);
     }
-
+    private static Character finFirstNonRepatingCharUsingStreams(String s)
+    {
+        Character ch=s.chars().mapToObj(c->(char)c)
+                .collect(Collectors.groupingBy(c->c,LinkedHashMap::new,Collectors.counting()))
+                .entrySet().stream().filter(entry->entry.getValue()==1).map(Map.Entry::getKey).findFirst()
+                .orElse(null);
+        return ch;
+    }
     private static char findFirstNonRepeatingChar(String s) {
         HashMap<Character,Integer>map=new HashMap();
         for(int i=0;i<s.length();i++)
@@ -40,11 +48,7 @@ public class Problem2 {
     }
     private static Character findingNonRepeatingChar(String s)
     {
-       /* HashMap<Character,Integer>map=s.chars().mapToObj(c->(char)c).
-                collect(LinkedHashMap::new,(ma,c)->ma.put(c,ma.getOrDefault(c,0)+1),
-                        Map::putAll);
-        Predicate
-        map.stream().filter()*/
+
         int[] charCount = new int[256];
         for (char ch : s.toCharArray()) {
             charCount[ch]++;
