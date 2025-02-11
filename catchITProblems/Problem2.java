@@ -21,6 +21,14 @@ public class Problem2 {
                 .orElse(null);
         return ch;
     }
+    private static Character finFirstNonRepatingCharUsingStreams1(String s){
+        Character ch=s.chars().mapToObj(c->(char)c).collect(
+                Collectors.groupingBy(c->c,LinkedHashMap::new,Collectors.counting())).entrySet().stream()
+                .filter(entry->entry.getValue()==1).map(Map.Entry::getKey).findFirst().orElse(null);
+
+
+        return ch;
+    }
     private static char findFirstNonRepeatingChar(String s) {
         HashMap<Character,Integer>map=new HashMap();
         for(int i=0;i<s.length();i++)

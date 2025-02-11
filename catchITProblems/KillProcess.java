@@ -4,11 +4,11 @@ import java.util.*;
 
 public class KillProcess {
     public static void main(String[] args) {
-        List<Integer> pid = Arrays.asList(1, 2, 3, 0);
-        List<Integer> ppid = Arrays.asList(6, 4, 8, 5);
+        List<Integer> ppid = Arrays.asList(3,10,15);
+        List<Integer> pid = Arrays.asList(2,2,5);
 //        List<Integer>  ppid=Arrays.asList(1,2,3,4,5);
 //          List<Integer> pid=Arrays.asList(3,7,3,2,1) ;
-        int kill = 3;
+        int kill = 2;
         System.out.println(killProcess2(pid, ppid, kill));
     }
 
